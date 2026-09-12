@@ -1,0 +1,83 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* List Reset */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Color Variables (Light Mode) */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f7;
+    --bg-card: #ffffff;
+
+    --text-primary: #141414;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+
+    --accent: #e50914;
+    --accent-hover: #b8070f;
+
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    --overlay: rgba(255, 255, 255, 0.85);
+}
+
+/* Color Variables (Dark Mode) */
+[data-theme="dark"] {
+    --bg-primary: #141414;
+    --bg-secondary: #1f1f1f;
+    --bg-card: #232323;
+
+    --text-primary: #ffffff;
+    --text-secondary: #d1d1d1;
+    --text-muted: #9a9a9a;
+
+    --accent: #e50914;
+    --accent-hover: #f6121c;
+
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+
+    --overlay: rgba(20, 20, 20, 0.85);
+}
+
+/* Base Typography & Body */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
