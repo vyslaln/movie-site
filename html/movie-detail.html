@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags & SEO -->
+    <!-- Meta Tags & SEO  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="View detailed information about this movie on Flixora.">
+    <meta name="keywords" content="movie detail, film information, Flixora">
+    <meta name="author" content="Flixora Team">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flixora - Movie Detail">
+    <meta property="og:description" content="Explore detailed movie information on Flixora.">
+    <meta property="og:type" content="website">
+
+    <!-- Title -->
     <title>Flixora – Movie Detail</title>
 
     <!-- The website icon image -->
@@ -23,32 +35,37 @@
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
+
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header & Navbar & Aside Bar -->
+
+    <!-- header -->
     <header>
-        <!-- Main Navigation Bar -->
+        <!-- navbar -->
         <nav class="navbar" aria-label="Main Navigation">
             <h2><a href="index.html">Flixora</a></h2>
-            <ul>
+            <ul id="mobile-nav-menu">
                 <li><a href="index.html">Main Page</a></li>
                 <li><a href="movies.html">Movies</a></li>
                 <li><a href="my-list.html">My List</a></li>
                 <li><a href="account.html">My Account</a></li>
             </ul>
+            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle Menu">
+                <i class="bi bi-list"></i>
+            </button>
             <button id="theme-toggle-nav" aria-label="Toggle Dark Mode">
                 <i class="bi bi-moon-stars-fill"></i>
             </button>
         </nav>
     </header>
 
-    <!-- Sidebar Quick Access Menu -->
+    <!-- sidebar -->
     <aside class="sidebar" aria-label="Quick Access Menu">
         <ul>
             <li><button id="search-btn" aria-label="Search"><i class="bi bi-search"></i></button></li>
             <li><a href="index.html" aria-label="Home"><i class="bi bi-house"></i></a></li>
-            <li><button id="recent-btn" aria-label="Recent"><i class="bi bi-hourglass-top"></i></button></li>
-            <li><button id="settings-btn" aria-label="Settings"><i class="bi bi-gear-fill"></i></button></li>
+            <li><a href="my-list.html" aria-label="My List"><i class="bi bi-bookmark-heart"></i></a></li>
             <li>
                 <button id="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="bi bi-moon-stars-fill"></i>
@@ -57,14 +74,12 @@
         </ul>
     </aside>
 
-    <!-- Movie Detail Content Section -->
+    <!-- Movie Detail Content -->
     <main class="container my-5">
         <div class="row align-items-center" id="movie-detail-container">
-            <!-- Movie Poster Column -->
             <div class="col-md-4 text-center mb-4 mb-md-0">
                 <img id="detail-poster" src="" alt="Movie Poster" class="img-fluid rounded shadow" style="max-height: 500px;">
             </div>
-            <!-- Movie Info Column -->
             <div class="col-md-8">
                 <h1 id="detail-title" class="fw-bold mb-3">Movie Title</h1>
                 <p class="text-muted" id="detail-genre"><strong>Genre:</strong> Loading...</p>
@@ -79,7 +94,7 @@
         </div>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-brand">
@@ -120,84 +135,10 @@
         </div>
     </footer>
 
-    <!-- JavaScript Files -->
+    <!-- JS Docs -->
     <script src="../javascript/theme.js"></script>
-    <script>
-        // Handle dynamic movie details loading based on URL parameters with duplicate prevention
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URLSearchParams(window.location.search);
-            const movieTitleParam = urlParams.get('title');
-            const decodedTitle = movieTitleParam ? decodeURIComponent(movieTitleParam) : "Movie Title";
+    <script src="../javascript/movie-details.js"></script>
+    <script src="../javascript/responsive-menu.js"></script>
 
-            // Comprehensive movie database mapping for posters and descriptions
-            const movieDatabase = {
-                "John Wick": {
-                    poster: "../images/john-wick.png",
-                    genre: "Thriller / Action",
-                    description: "An ex-hit-man comes out of retirement to track down the gangsters that killed his dog and took everything from him."
-                },
-                "Shawshank": {
-                    poster: "../images/esaretin-bedeli.png",
-                    genre: "Drama",
-                    description: "Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion."
-                },
-                "Budapest": {
-                    poster: "../images/budapeşte-hoteli.png",
-                    genre: "Comedy",
-                    description: "The adventures of Gustave H, a legendary concierge at a famous European hotel between the wars, and Zero Moustafa, the lobby boy."
-                },
-                "Interstellar": {
-                    poster: "../images/interstellar.png",
-                    genre: "Science-Fiction",
-                    description: "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot is tasked to pilot a spacecraft to find a new planet for humans."
-                }
-            };
-
-            // Find matching movie or set generic defaults
-            let selectedMovie = {
-                title: decodedTitle,
-                poster: "../images/cinema.png",
-                genre: "Feature Film",
-                description: "Detailed information, synopsis, and cast overview for this movie will appear here. Enjoy exploring Flixora!"
-            };
-
-            for (let key in movieDatabase) {
-                if (decodedTitle.includes(key)) {
-                    selectedMovie.poster = movieDatabase[key].poster;
-                    selectedMovie.genre = movieDatabase[key].genre;
-                    selectedMovie.description = movieDatabase[key].description;
-                    break;
-                }
-            }
-
-            // Update DOM elements with movie details
-            document.getElementById('detail-title').textContent = selectedMovie.title;
-            document.getElementById('detail-genre').innerHTML = `<strong>Genre:</strong> ${selectedMovie.genre}`;
-            document.getElementById('detail-poster').src = selectedMovie.poster;
-            document.getElementById('detail-poster').alt = selectedMovie.title;
-            document.getElementById('detail-description').textContent = selectedMovie.description;
-
-            // Handle adding movie to local storage watchlist with duplicate prevention
-            const addBtn = document.getElementById('detail-add-watchlist');
-            addBtn.addEventListener('click', function () {
-                let watchlist = JSON.parse(localStorage.getItem('flixora_watchlist')) || [];
-                const exists = watchlist.some(movie => movie.title === selectedMovie.title);
-
-                if (!exists) {
-                    watchlist.push({ 
-                        id: selectedMovie.title, 
-                        title: selectedMovie.title, 
-                        poster: selectedMovie.poster, 
-                        genre: selectedMovie.genre, 
-                        year: "2026" 
-                    });
-                    localStorage.setItem('flixora_watchlist', JSON.stringify(watchlist));
-                    alert(`"${selectedMovie.title}" added to your watchlist!`);
-                } else {
-                    alert(`Error: "${selectedMovie.title}" is already in your watchlist!`);
-                }
-            });
-        });
-    </script>
 </body>
 </html>

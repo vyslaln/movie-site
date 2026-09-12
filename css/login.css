@@ -75,3 +75,20 @@ body {
 .login-button:hover {
     background-color: var(--accent-hover);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-card h2 {
+        font-size: 22px;
+    }
+
+    .login-card input,
+    .login-button {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+}

@@ -121,6 +121,10 @@
     box-shadow: 0 10px 24px var(--shadow-color);
 }
 
+.movie-card a {
+    display: block;
+}
+
 .movie-card img {
     width: 100%;
     aspect-ratio: 2 / 3;
@@ -144,6 +148,15 @@
 
 .movie-card:hover .movie-overlay {
     opacity: 1;
+}
+
+.movie-overlay a,
+.movie-overlay button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
 }
 
 /* Movie Grid (Movies Page) */
@@ -385,4 +398,9 @@
 .search-result-item span {
     font-size: 14px;
     font-weight: 500;
+}
+
+/* Hamburger Button */
+.hamburger-btn {
+    color: var(--text-primary);
 }

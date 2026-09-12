@@ -1,43 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags & SEO  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse and filter through thousands of movies by genre, release year and rating on Flixora.">
-    <title>Movies – Flixora</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Browse and filter through thousands of movies by genre on Flixora.">
+    <meta name="keywords" content="movies, movie database, film discovery, movie search, cinema, film details, Flixora">
+    <meta name="author" content="Flixora Team">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Flixora - Movies">
+    <meta property="og:description" content="Browse trending, new, and popular movies on Flixora.">
+    <meta property="og:type" content="website">
+
+    <!-- Title -->
+    <title>Flixora – Movies</title>
+
+    <!-- The website icon image -->
     <link rel="icon" href="../images/cinema.png" type="image/png">
+
+    <!-- Bootstrap & CDN Links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CSS Docs -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/layout.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
+
 </head>
 <body>
+    <!-- Header & Navbar & Aside Bar -->
+
+    <!-- header -->
     <header>
+        <!-- navbar -->
         <nav class="navbar" aria-label="Main Navigation">
             <h2><a href="index.html">Flixora</a></h2>
-            <ul>
+            <ul id="mobile-nav-menu">
                 <li><a href="index.html">Main Page</a></li>
                 <li><a href="movies.html" class="active">Movies</a></li>
                 <li><a href="my-list.html">My List</a></li>
                 <li><a href="account.html">My Account</a></li>
             </ul>
+            <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle Menu">
+                <i class="bi bi-list"></i>
+            </button>
             <button id="theme-toggle-nav" aria-label="Toggle Dark Mode">
                 <i class="bi bi-moon-stars-fill"></i>
             </button>
         </nav>
     </header>
 
+    <!-- sidebar -->
     <aside class="sidebar" aria-label="Quick Access Menu">
         <ul>
             <li><button id="search-btn" aria-label="Search"><i class="bi bi-search"></i></button></li>
             <li><a href="index.html" aria-label="Home"><i class="bi bi-house"></i></a></li>
-            <li><a href="my-list.html" aria-label="Recent / My List"><i class="bi bi-hourglass-top"></i></a></li>
-            <li><button id="settings-btn" aria-label="Settings"><i class="bi bi-gear-fill"></i></button></li>
+            <li><a href="my-list.html" aria-label="My List"><i class="bi bi-bookmark-heart"></i></a></li>
             <li>
                 <button id="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="bi bi-moon-stars-fill"></i>
@@ -46,58 +74,362 @@
         </ul>
     </aside>
 
-    <main class="container py-5 mt-5">
-        <section class="movies-header mb-4">
-            <h1 class="section-title">All Movies</h1>
-            <p class="text-muted">Explore our complete catalog sorted by categories.</p>
-            
-            <div class="filter-bar d-flex flex-wrap gap-2 my-3">
-                <button class="btn btn-outline-light active">All</button>
-                <button class="btn btn-outline-light">Action</button>
-                <button class="btn btn-outline-light">Drama</button>
-                <button class="btn btn-outline-light">Comedy</button>
-                <button class="btn btn-outline-light">Sci-Fi</button>
-                <button class="btn btn-outline-light">Horror</button>
-                <button class="btn btn-outline-light">Animation</button>
-            </div>
-        </section>
+    <!-- Select Menu -->
+    <div class="filter-group">
+        <select name="genre" id="genre-select" class="genres">
+            <option value="">All</option>
+            <option value="action">Action</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <option value="sci-fiction">Science-Fiction</option>
+            <option value="horror">Horror</option>
+            <option value="thriller">Thriller</option>
+            <option value="romantic">Romantic</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="animation">Animation</option>
+            <option value="documentaries">Documentaries</option>
+            <option value="western">Western</option>
+            <option value="history">History</option>
+            <option value="whodunit">Detective</option>
+            <option value="indie">Indie</option>
+        </select>
+    </div>
 
-        <section class="movies-grid-section">
-            <div class="row g-4">
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/john-wick.png" alt="John Wick (2014)" class="img-fluid rounded">
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/esaretin-bedeli.png" alt="The Shawshank Redemption (1994)" class="img-fluid rounded">
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)" class="img-fluid rounded">
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/interstellar.png" alt="Interstellar (2014)" class="img-fluid rounded">
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/the-conjuring.png" alt="The Conjuring (2013)" class="img-fluid rounded">
-                    </article>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <article class="movie-card">
-                        <img src="../images/se7en.png" alt="Se7en (1995)" class="img-fluid rounded">
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- All Movies -->
+    <section class="mlist-container">
+        <h2 class="section-title">
+            All Movies
+        </h2>
+        <ul class="movie-grid" id="movies-grid-container">
+            <li data-genre="thriller" data-title="John Wick (2014)" data-poster="../images/john-wick.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=John%20Wick%20(2014)&poster=../images/john-wick.png&genre=Thriller">
+                        <img src="../images/john-wick.png" alt="John Wick (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=John%20Wick%20(2014)&poster=../images/john-wick.png&genre=Thriller" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
 
+            <li data-genre="drama" data-title="The Shawshank Redemption (1994)" data-poster="../images/esaretin-bedeli.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Shawshank%20Redemption%20(1994)&poster=../images/esaretin-bedeli.png&genre=Drama">
+                        <img src="../images/esaretin-bedeli.png" alt="The Shawshank Redemption (1994)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Shawshank%20Redemption%20(1994)&poster=../images/esaretin-bedeli.png&genre=Drama" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="comedy" data-title="The Grand Budapest Hotel (2014)" data-poster="../images/budapeşte-hoteli.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Grand%20Budapest%20Hotel%20(2014)&poster=../images/budapeşte-hoteli.png&genre=Comedy">
+                        <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Grand%20Budapest%20Hotel%20(2014)&poster=../images/budapeşte-hoteli.png&genre=Comedy" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="sci-fiction" data-title="Interstellar (2014)" data-poster="../images/interstellar.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Interstellar%20(2014)&poster=../images/interstellar.png&genre=Science-Fiction">
+                        <img src="../images/interstellar.png" alt="Interstellar (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Interstellar%20(2014)&poster=../images/interstellar.png&genre=Science-Fiction" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="horror" data-title="The Conjuring (2013)" data-poster="../images/the-conjuring.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Conjuring%20(2013)&poster=../images/the-conjuring.png&genre=Horror">
+                        <img src="../images/the-conjuring.png" alt="The Conjuring (2013)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Conjuring%20(2013)&poster=../images/the-conjuring.png&genre=Horror" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="thriller" data-title="Se7en (1995)" data-poster="../images/se7en.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Se7en%20(1995)&poster=../images/se7en.png&genre=Thriller">
+                        <img src="../images/se7en.png" alt="Se7en (1995)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Se7en%20(1995)&poster=../images/se7en.png&genre=Thriller" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="romantic" data-title="La La Land (2016)" data-poster="../images/la-la-land.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=La%20La%20Land%20(2016)&poster=../images/la-la-land.png&genre=Romance">
+                        <img src="../images/la-la-land.png" alt="La La Land (2016)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=La%20La%20Land%20(2016)&poster=../images/la-la-land.png&genre=Romance" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="fantasy" data-title="The Lord of the Rings: The Fellowship of the Ring (2001)" data-poster="../images/yuzuklerin-efendisi.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Lord%20of%20the%20Rings%20(2001)&poster=../images/yuzuklerin-efendisi.png&genre=Fantasy">
+                        <img src="../images/yuzuklerin-efendisi.png" alt="The Lord of the Rings: The Fellowship of the Ring (2001)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Lord%20of%20the%20Rings%20(2001)&poster=../images/yuzuklerin-efendisi.png&genre=Fantasy" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="animation" data-title="Spider-Man: Into the Spider-Verse (2018)" data-poster="../images/orumcek-adam-evreninde.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Spider-Man%3A%20Into%20the%20Spider-Verse%20(2018)&poster=../images/orumcek-adam-evreninde.png&genre=Animation">
+                        <img src="../images/orumcek-adam-evreninde.png" alt="Spider-Man: Into the Spider-Verse (2018)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Spider-Man%3A%20Into%20the%20Spider-Verse%20(2018)&poster=../images/orumcek-adam-evreninde.png&genre=Animation" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="documentaries" data-title="Free Solo (2018)" data-poster="../images/free-solo.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Free%20Solo%20(2018)&poster=../images/free-solo.png&genre=Documentary">
+                        <img src="../images/free-solo.png" alt="Free Solo (2018)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Free%20Solo%20(2018)&poster=../images/free-solo.png&genre=Documentary" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="western" data-title="The Good, the Bad and the Ugly (1966)" data-poster="../images/iyi-kotu-ve-cirkin.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Good%2C%20the%20Bad%20and%20the%20Ugly%20(1966)&poster=../images/iyi-kotu-ve-cirkin.png&genre=Western">
+                        <img src="../images/iyi-kotu-ve-cirkin.png" alt="The Good, the Bad and the Ugly (1966)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Good%2C%20the%20Bad%20and%20the%20Ugly%20(1966)&poster=../images/iyi-kotu-ve-cirkin.png&genre=Western" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="history" data-title="Schindler's List (1993)" data-poster="../images/schindler-list.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Schindler%27s%20List%20(1993)&poster=../images/schindler-list.png&genre=History">
+                        <img src="../images/schindler-list.png" alt="Schindler's List (1993)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Schindler%27s%20List%20(1993)&poster=../images/schindler-list.png&genre=History" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="whodunit" data-title="Knives Out (2019)" data-poster="../images/knives-out.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Knives%20Out%20(2019)&poster=../images/knives-out.png&genre=Detective">
+                        <img src="../images/knives-out.png" alt="Knives Out (2019)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Knives%20Out%20(2019)&poster=../images/knives-out.png&genre=Detective" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="indie" data-title="Little Miss Sunshine (2006)" data-poster="../images/little-miss-sunshine.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Little%20Miss%20Sunshine%20(2006)&poster=../images/little-miss-sunshine.png&genre=Indie">
+                        <img src="../images/little-miss-sunshine.png" alt="Little Miss Sunshine (2006)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Little%20Miss%20Sunshine%20(2006)&poster=../images/little-miss-sunshine.png&genre=Indie" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="animation" data-title="Toy Story 5 (2026)" data-poster="../images/toy-story.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Toy%20Story%205%20(2026)&poster=../images/toy-story.png&genre=Animation">
+                        <img src="../images/toy-story.png" alt="Toy Story 5 (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Toy%20Story%205%20(2026)&poster=../images/toy-story.png&genre=Animation" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="action" data-title="Onslaught (2026)" data-poster="../images/onslaught.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Onslaught%20(2026)&poster=../images/onslaught.png&genre=Action">
+                        <img src="../images/onslaught.png" alt="Onslaught (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Onslaught%20(2026)&poster=../images/onslaught.png&genre=Action" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="horror" data-title="Backrooms (2026)" data-poster="../images/backrooms.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Backrooms%20(2026)&poster=../images/backrooms.jpg&genre=Horror">
+                        <img src="../images/backrooms.jpg" alt="Backrooms (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Backrooms%20(2026)&poster=../images/backrooms.jpg&genre=Horror" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="comedy" data-title="Scary Movie 6 (2026)" data-poster="../images/scary-movie.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Scary%20Movie%206%20(2026)&poster=../images/scary-movie.jpg&genre=Comedy">
+                        <img src="../images/scary-movie.jpg" alt="Scary Movie 6 (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Scary%20Movie%206%20(2026)&poster=../images/scary-movie.jpg&genre=Comedy" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="action" data-title="Iron Man" data-poster="../images/ironman.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Iron%20Man&poster=../images/ironman.jpg&genre=Action">
+                        <img src="../images/ironman.jpg" alt="Iron Man">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Iron%20Man&poster=../images/ironman.jpg&genre=Action" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="action" data-title="Hulk" data-poster="../images/hulk.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Hulk&poster=../images/hulk.jpg&genre=Action">
+                        <img src="../images/hulk.jpg" alt="Hulk">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Hulk&poster=../images/hulk.jpg&genre=Action" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="action" data-title="Spider-Man 2" data-poster="../images/spidey2.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Spider-Man%202&poster=../images/spidey2.jpg&genre=Action">
+                        <img src="../images/spidey2.jpg" alt="Spider-Man 2">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Spider-Man%202&poster=../images/spidey2.jpg&genre=Action" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="action" data-title="Daredevil" data-poster="../images/daredevik.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Daredevil&poster=../images/daredevik.jpg&genre=Action">
+                        <img src="../images/daredevik.jpg" alt="Daredevil">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Daredevil&poster=../images/daredevik.jpg&genre=Action" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="comedy" data-title="G.O.R.A." data-poster="../images/gora.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=G.O.R.A.&poster=../images/gora.jpg&genre=Comedy">
+                        <img src="../images/gora.jpg" alt="G.O.R.A.">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=G.O.R.A.&poster=../images/gora.jpg&genre=Comedy" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="comedy" data-title="Arog" data-poster="../images/arog.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Arog&poster=../images/arog.jpg&genre=Comedy">
+                        <img src="../images/arog.jpg" alt="Arog">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Arog&poster=../images/arog.jpg&genre=Comedy" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="animation" data-title="Miles Morales" data-poster="../images/mmorales.jpg">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=Miles%20Morales&poster=../images/mmorales.jpg&genre=Animation">
+                        <img src="../images/mmorales.jpg" alt="Miles Morales">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=Miles%20Morales&poster=../images/mmorales.jpg&genre=Animation" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+
+            <li data-genre="sci-fiction" data-title="The Mandalorian and Grogu" data-poster="../images/mandalorian.png">
+                <article class="movie-card">
+                    <a href="movie-detail.html?title=The%20Mandalorian%20and%20Grogu&poster=../images/mandalorian.png&genre=Science-Fiction">
+                        <img src="../images/mandalorian.png" alt="The Mandalorian and Grogu">
+                    </a>
+                    <div class="movie-overlay">
+                        <a href="movie-detail.html?title=The%20Mandalorian%20and%20Grogu&poster=../images/mandalorian.png&genre=Science-Fiction" aria-label="View Details"><i class="bi bi-info-circle"></i></a>
+                        <button class="add-watchlist-btn" aria-label="Add to Watchlist"><i class="bi bi-plus-lg"></i></button>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Search Modal -->
+    <div class="search-modal-overlay" id="search-modal" style="display: none;">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h3>Search Movies</h3>
+                <button class="btn-close-modal" id="close-search-modal">&times;</button>
+            </div>
+            <div class="search-input-wrapper">
+                <input type="text" id="movie-search-input" placeholder="Search for a movie...">
+            </div>
+            <div class="search-results-container" id="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-brand">
@@ -138,7 +470,12 @@
         </div>
     </footer>
 
+    <!-- JS Docs -->
     <script src="../javascript/theme.js"></script>
-    <script src="../javascript/movies.js"></script>
+    <script src="../javascript/genre-filter.js"></script>
+    <script src="../javascript/movies-actions.js"></script>
+    <script src="../javascript/search.js"></script>
+    <script src="../javascript/responsive-menu.js"></script>
+
 </body>
 </html>
