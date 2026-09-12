@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <meta name="description" content="Log in to your Flixora account to explore movies.">
-    <meta name="keywords" content="login, sign in, Flixora">
+    <meta name="description" content="Edit your Flixora account profile, name, and avatar settings.">
+    <meta name="keywords" content="edit profile, account settings, Flixora">
     <meta name="author" content="Flixora Team">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Flixora - Login">
-    <meta property="og:description" content="Log in to your Flixora account.">
+    <meta property="og:title" content="Flixora - Edit Profile">
+    <meta property="og:description" content="Update your Flixora account profile details.">
     <meta property="og:type" content="website">
 
     <!-- Title -->
-    <title>Flixora – Login</title>
+    <title>Flixora – Edit Profile</title>
 
     <!-- The website icon image -->
     <link rel="icon" href="../images/cinema.png" type="image/png">
@@ -33,31 +33,34 @@
     <!-- External CSS Docs -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+
 </head>
 <body>
-    <!-- Login Content -->
+    <!-- Edit Profile Content -->
     <section class="login-container">
         <div class="login-card">
-            <h2><a href="index.html">Flixora Login</a></h2>
+            <h2><a href="account.html">Edit Profile</a></h2>
 
-            <form id="login-form">
+            <form id="edit-profile-form">
+                <!-- Profile Picture File Upload -->
+                <label for="profile-avatar">Profile Picture</label>
+                <input type="file" id="profile-avatar" accept="image/*">
+
+                <!-- Name Section -->
+                <label for="profile-name">Name</label>
+                <input type="text" id="profile-name" placeholder="Your name" required>
+
                 <!-- Email Section -->
-                <label for="login-email">Email</label>
-                <input type="email" id="login-email" placeholder="you@example.com" required>
+                <label for="new-email">Email</label>
+                <input type="email" id="new-email" placeholder="you@example.com" required>
 
-                <!-- Password Section with Toggle Icon -->
-                <label for="login-password">Password</label>
-                <div class="password-wrapper" style="position: relative;">
-                    <input type="password" id="login-password" placeholder="••••••••" required style="width: 100%; padding-right: 40px;">
-                    <i class="bi bi-eye-slash toggle-password" data-target="login-password" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #aaa;"></i>
-                </div>
-
-                <button type="submit" class="login-button">Log In</button>
+                <button type="submit" class="login-button">Save Changes</button>
             </form>
         </div>
     </section>
 
     <!-- JS Docs -->
     <script src="../javascript/auth.js"></script>
+
 </body>
 </html>

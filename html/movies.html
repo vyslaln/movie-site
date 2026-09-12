@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags & SEO  -->
+    <!-- Meta Tags & SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -36,13 +36,51 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
 
+    <style>
+        /* Beyaz alanı tamamen kaldırıp butonları afiş üzerine sabitleyen güncel stil */
+        .movie-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: var(--bg-card);
+            box-shadow: 0 4px 14px var(--shadow-color);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 10px 24px var(--shadow-color);
+        }
+
+        .movie-card img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .movie-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .movie-card:hover .movie-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header & Navbar & Aside Bar -->
-
-    <!-- header -->
+    <!-- Header Section -->
     <header>
-        <!-- navbar -->
         <nav class="navbar" aria-label="Main Navigation">
             <h2><a href="index.html">Flixora</a></h2>
             <ul>
@@ -57,7 +95,7 @@
         </nav>
     </header>
 
-    <!-- sidebar -->
+    <!-- Sidebar Quick Access Menu -->
     <aside class="sidebar" aria-label="Quick Access Menu">
         <ul>
             <li><button id="search-btn" aria-label="Search"><i class="bi bi-search"></i></button></li>
@@ -72,7 +110,7 @@
         </ul>
     </aside>
 
-    <!-- Select Menu -->
+    <!-- Genre Select Dropdown Menu -->
     <div class="filter-group">
         <select name="genre" id="genre-select" class="genres">
             <option value="">All</option>
@@ -93,171 +131,353 @@
         </select>
     </div>
 
-    <!-- All Movies -->
+    <!-- All Movies Grid Section -->
     <section class="mlist-container">
         <h2 class="section-title">
             All Movies
         </h2>
-        <ul class="movie-grid">
-            <li data-genre="thriller">
+        <ul class="movie-grid" id="movies-grid-container">
+            <!-- Movie Item: John Wick -->
+            <li data-genre="thriller" data-title="John Wick (2014)" data-poster="../images/john-wick.png">
                 <article class="movie-card">
-                    <img src="../images/john-wick.png" alt="John Wick (2014)">
+                    <a href="movie-detail.html?title=John%20Wick">
+                        <img src="../images/john-wick.png" alt="John Wick (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=John%20Wick" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="drama">
+            <!-- Movie Item: The Shawshank Redemption -->
+            <li data-genre="drama" data-title="The Shawshank Redemption (1994)" data-poster="../images/esaretin-bedeli.png">
                 <article class="movie-card">
-                    <img src="../images/esaretin-bedeli.png" alt="The Shawsank Redemption (1994)">
+                    <a href="movie-detail.html?title=Shawshank">
+                        <img src="../images/esaretin-bedeli.png" alt="The Shawshank Redemption (1994)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Shawshank" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="comedy">
+            <!-- Movie Item: The Grand Budapest Hotel -->
+            <li data-genre="comedy" data-title="The Grand Budapest Hotel (2014)" data-poster="../images/budapeşte-hoteli.png">
                 <article class="movie-card">
-                    <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)">
+                    <a href="movie-detail.html?title=Budapest">
+                        <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Budapest" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="sci-fiction">
+            <!-- Movie Item: Interstellar -->
+            <li data-genre="sci-fiction" data-title="Interstellar (2014)" data-poster="../images/interstellar.png">
                 <article class="movie-card">
-                    <img src="../images/interstellar.png" alt="Interstellar (2014)">
+                    <a href="movie-detail.html?title=Interstellar">
+                        <img src="../images/interstellar.png" alt="Interstellar (2014)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Interstellar" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="horror">
+            <!-- Movie Item: The Conjuring -->
+            <li data-genre="horror" data-title="The Conjuring (2013)" data-poster="../images/the-conjuring.png">
                 <article class="movie-card">
-                    <img src="../images/the-conjuring.png" alt="The Conjuring (2013)">
+                    <a href="movie-detail.html?title=Conjuring">
+                        <img src="../images/the-conjuring.png" alt="The Conjuring (2013)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Conjuring" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="thriller">
+            <!-- Movie Item: Se7en -->
+            <li data-genre="thriller" data-title="Se7en (1995)" data-poster="../images/se7en.png">
                 <article class="movie-card">
-                    <img src="../images/se7en.png" alt="Se7en (1995)">
+                    <a href="movie-detail.html?title=Se7en">
+                        <img src="../images/se7en.png" alt="Se7en (1995)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Se7en" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="romantic">
+            <!-- Movie Item: La La Land -->
+            <li data-genre="romantic" data-title="La La Land (2016)" data-poster="../images/la-la-land.png">
                 <article class="movie-card">
-                    <img src="../images/la-la-land.png" alt="La La Land (2016)">
+                    <a href="movie-detail.html?title=LaLaLand">
+                        <img src="../images/la-la-land.png" alt="La La Land (2016)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=LaLaLand" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="fantasy">
+            <!-- Movie Item: The Lord of the Rings -->
+            <li data-genre="fantasy" data-title="The Lord of the Rings: The Fellowship of the Ring (2001)" data-poster="../images/yuzuklerin-efendisi.png">
                 <article class="movie-card">
-                    <img src="../images/yuzuklerin-efendisi.png" alt="The Lord of the Rings: The Fellowship of the Ring (2001)">
+                    <a href="movie-detail.html?title=LOTR">
+                        <img src="../images/yuzuklerin-efendisi.png" alt="The Lord of the Rings: The Fellowship of the Ring (2001)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=LOTR" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="animation">
+            <!-- Movie Item: Spider-Man: Into the Spider-Verse -->
+            <li data-genre="animation" data-title="Spider-Man: Into the Spider-Verse (2018)" data-poster="../images/orumcek-adam-evreninde.png">
                 <article class="movie-card">
-                    <img src="../images/orumcek-adam-evreninde.png" alt="Spider-Man: Into the Spider-Verse (2018)">
+                    <a href="movie-detail.html?title=SpiderVerse">
+                        <img src="../images/orumcek-adam-evreninde.png" alt="Spider-Man: Into the Spider-Verse (2018)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=SpiderVerse" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="documentaries">
+            <!-- Movie Item: Free Solo -->
+            <li data-genre="documentaries" data-title="Free Solo (2018)" data-poster="../images/free-solo.png">
                 <article class="movie-card">
-                    <img src="../images/free-solo.png" alt="Free Solo (2018)">
+                    <a href="movie-detail.html?title=FreeSolo">
+                        <img src="../images/free-solo.png" alt="Free Solo (2018)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=FreeSolo" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="western">
+            <!-- Movie Item: The Good, the Bad and the Ugly -->
+            <li data-genre="western" data-title="The Good, the Bad and the Ugly (1966)" data-poster="../images/iyi-kotu-ve-cirkin.png">
                 <article class="movie-card">
-                    <img src="../images/iyi-kotu-ve-cirkin.png" alt="The Good, the Bad and the Ugly (1966)">
+                    <a href="movie-detail.html?title=Western">
+                        <img src="../images/iyi-kotu-ve-cirkin.png" alt="The Good, the Bad and the Ugly (1966)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Western" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="history">
+            <!-- Movie Item: Schindler's List -->
+            <li data-genre="history" data-title="Schindler's List (1993)" data-poster="../images/schindler-list.png">
                 <article class="movie-card">
-                    <img src="../images/schindler-list.png" alt="Schindler's List (1993)">
+                    <a href="movie-detail.html?title=SchindlersList">
+                        <img src="../images/schindler-list.png" alt="Schindler's List (1993)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=SchindlersList" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="whodunit">
+            <!-- Movie Item: Knives Out -->
+            <li data-genre="whodunit" data-title="Knives Out (2019)" data-poster="../images/knives-out.png">
                 <article class="movie-card">
-                    <img src="../images/knives-out.png" alt="Knives Out (2019)">
+                    <a href="movie-detail.html?title=KnivesOut">
+                        <img src="../images/knives-out.png" alt="Knives Out (2019)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=KnivesOut" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="indie">
+            <!-- Movie Item: Little Miss Sunshine -->
+            <li data-genre="indie" data-title="Little Miss Sunshine (2006)" data-poster="../images/little-miss-sunshine.png">
                 <article class="movie-card">
-                    <img src="../images/little-miss-sunshine.png" alt="Little Miss Sunshine (2006)">
+                    <a href="movie-detail.html?title=LittleMissSunshine">
+                        <img src="../images/little-miss-sunshine.png" alt="Little Miss Sunshine (2006)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=LittleMissSunshine" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="animation">
+            <!-- Movie Item: Toy Story 5 -->
+            <li data-genre="animation" data-title="Toy Story 5 (2026)" data-poster="../images/toy-story.png">
                 <article class="movie-card">
-                    <img src="../images/toy-story.png" alt="Toy Story 5 (2026)">
+                    <a href="movie-detail.html?title=ToyStory">
+                        <img src="../images/toy-story.png" alt="Toy Story 5 (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=ToyStory" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="action">
+            <!-- Movie Item: Onslaught -->
+            <li data-genre="action" data-title="Onslaught (2026)" data-poster="../images/onslaught.png">
                 <article class="movie-card">
-                    <img src="../images/onslaught.png" alt="Onslaught (2026)">
+                    <a href="movie-detail.html?title=Onslaught">
+                        <img src="../images/onslaught.png" alt="Onslaught (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Onslaught" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="horror">
+            <!-- Movie Item: Backrooms -->
+            <li data-genre="horror" data-title="Backrooms (2026)" data-poster="../images/backrooms.jpg">
                 <article class="movie-card">
-                    <img src="../images/backrooms.jpg" alt="Backrooms (2026)">
+                    <a href="movie-detail.html?title=Backrooms">
+                        <img src="../images/backrooms.jpg" alt="Backrooms (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Backrooms" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="comedy">
+            <!-- Movie Item: Scary Movie 6 -->
+            <li data-genre="comedy" data-title="Scary Movie 6 (2026)" data-poster="../images/scary-movie.jpg">
                 <article class="movie-card">
-                    <img src="../images/scary-movie.jpg" alt="Scary Movie 6 (2026)">
+                    <a href="movie-detail.html?title=ScaryMovie">
+                        <img src="../images/scary-movie.jpg" alt="Scary Movie 6 (2026)">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=ScaryMovie" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="action">
+            <!-- Movie Item: Iron Man -->
+            <li data-genre="action" data-title="Iron Man" data-poster="../images/ironman.jpg">
                 <article class="movie-card">
-                    <img src="../images/ironman.jpg" alt="Iron Man">
+                    <a href="movie-detail.html?title=IronMan">
+                        <img src="../images/ironman.jpg" alt="Iron Man">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=IronMan" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="action">
+            <!-- Movie Item: Hulk -->
+            <li data-genre="action" data-title="Hulk" data-poster="../images/hulk.jpg">
                 <article class="movie-card">
-                    <img src="../images/hulk.jpg" alt="Hulk">
+                    <a href="movie-detail.html?title=Hulk">
+                        <img src="../images/hulk.jpg" alt="Hulk">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Hulk" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="action">
+            <!-- Movie Item: Spider-Man 2 -->
+            <li data-genre="action" data-title="Spider-Man 2" data-poster="../images/spidey2.jpg">
                 <article class="movie-card">
-                    <img src="../images/spidey2.jpg" alt="Spider-Man 2">
+                    <a href="movie-detail.html?title=Spidey2">
+                        <img src="../images/spidey2.jpg" alt="Spider-Man 2">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Spidey2" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="action">
+            <!-- Movie Item: Daredevil -->
+            <li data-genre="action" data-title="Daredevil" data-poster="../images/daredevik.jpg">
                 <article class="movie-card">
-                    <img src="../images/daredevik.jpg" alt="Daredevil">
+                    <a href="movie-detail.html?title=Daredevil">
+                        <img src="../images/daredevik.jpg" alt="Daredevil">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Daredevil" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="comedy">
+            <!-- Movie Item: G.O.R.A. -->
+            <li data-genre="comedy" data-title="G.O.R.A." data-poster="../images/gora.jpg">
                 <article class="movie-card">
-                    <img src="../images/gora.jpg" alt="G.O.R.A.">
+                    <a href="movie-detail.html?title=Gora">
+                        <img src="../images/gora.jpg" alt="G.O.R.A.">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Gora" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="comedy">
+            <!-- Movie Item: Arog -->
+            <li data-genre="comedy" data-title="Arog" data-poster="../images/arog.jpg">
                 <article class="movie-card">
-                    <img src="../images/arog.jpg" alt="Arog">
+                    <a href="movie-detail.html?title=Arog">
+                        <img src="../images/arog.jpg" alt="Arog">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Arog" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="animation">
+            <!-- Movie Item: Miles Morales -->
+            <li data-genre="animation" data-title="Miles Morales" data-poster="../images/mmorales.jpg">
                 <article class="movie-card">
-                    <img src="../images/mmorales.jpg" alt="Miles Morales">
+                    <a href="movie-detail.html?title=MilesMorales">
+                        <img src="../images/mmorales.jpg" alt="Miles Morales">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=MilesMorales" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
 
-            <li data-genre="sci-fiction">
+            <!-- Movie Item: The Mandalorian and Grogu -->
+            <li data-genre="sci-fiction" data-title="The Mandalorian and Grogu" data-poster="../images/mandalorian.png">
                 <article class="movie-card">
-                    <img src="../images/mandalorian.png" alt="The Mandalorian and Grogu">
+                    <a href="movie-detail.html?title=Mandalorian">
+                        <img src="../images/mandalorian.png" alt="The Mandalorian and Grogu">
+                    </a>
+                    <div class="movie-overlay">
+                        <button class="btn btn-sm btn-danger add-watchlist-btn" title="Add to My List"><i class="bi bi-plus-lg"></i></button>
+                        <a href="movie-detail.html?title=Mandalorian" class="btn btn-sm btn-light" title="Details"><i class="bi bi-info-circle"></i></a>
+                    </div>
                 </article>
             </li>
         </ul>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-brand">
@@ -265,30 +485,30 @@
                 <p>Discover, explore, and track your favorite movies and series.</p>
             </div>
 
-        <nav class="footer-links" aria-label="Footer Navigation">
-            <div class="footer-column">
-                <h3>Explore</h3>
+            <nav class="footer-links" aria-label="Footer Navigation">
+                <div class="footer-column">
+                    <h3>Explore</h3>
                     <ul>
                         <li><a href="movies.html">Movies</a></li>
                         <li><a href="my-list.html">My List</a></li>
                     </ul>
-            </div>
+                </div>
 
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
 
-            <div class="footer-column">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Use</a></li>
-                </ul>
-            </div>
-        </nav>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </nav>
 
             <div class="footer-social">
                 <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -303,9 +523,9 @@
         </div>
     </footer>
 
-    <!-- JS Docs -->
+    <!-- JavaScript Documentation Links -->
     <script src="../javascript/theme.js"></script>
     <script src="../javascript/genre-filter.js"></script>
-
+    <script src="../javascript/movies-actions.js"></script>
 </body>
 </html>
