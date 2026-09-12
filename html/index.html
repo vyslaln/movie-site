@@ -48,9 +48,7 @@
             <ul>
                 <li><a href="index.html">Main Page</a></li>
                 <li><a href="movies.html">Movies</a></li>
-                <li><a href="series.html">Series</a></li>
                 <li><a href="my-list.html">My List</a></li>
-                <li><a href="popular.html">Popular</a></li>
                 <li><a href="account">My Account</a></li>
             </ul>
             <button id="theme-toggle-nav" aria-label="Toggle Dark Mode">
@@ -63,7 +61,7 @@
     <aside class="sidebar" aria-label="Quick Access Menu">
         <ul>
             <li><button id="search-btn" aria-label="Search"><i class="bi bi-search"></i></button></li>
-            <li><a href="index.html" aria-label="Home"><i class="bi bi-home"></i></a></li>
+            <li><a href="index.html" aria-label="Home"><i class="bi bi-house"></i></a></li>
             <li><button id="recent-btn" aria-label="Recent"><i class="bi bi-hourglass-top"></i></button></li>
             <li><button id="settings-btn" aria-label="Settings"><i class="bi bi-gear-fill"></i></button></li>
             <li>
@@ -76,6 +74,8 @@
 
     <!-- Feature Content -->
     <main class="spidey">
+        <img class="hero-bg-secondary" src="../images/spidey2.jpg" alt="">
+
         <img class="featured-title" src="../images/far-from-hpme.png" alt="Spider Man 3">
         <p class="featured-description">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
@@ -102,151 +102,150 @@
         </div>
     </main>
 
-    <!-- Select Menu -->
-    <div class="filter-group">
-        <select name="genre" id="genre-select" class="genres">
-            <option value="">All</option>
-            <option value="action">Action</option>
-            <option value="drama">Drama</option>
-            <option value="comedy">Comedy</option>
-            <option value="sci-fiction">Science-Fiction</option>
-            <option value="horror">Horror</option>
-            <option value="thriller">Thriller</option>
-            <option value="romantic">Romantic</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="animation">Animation</option>
-            <option value="documentaries">Documentaries</option>
-            <option value="western">Western</option>
-            <option value="history">History</option>
-            <option value="whodunit">Detective</option>
-            <option value="indie">Indie</option>
-        </select>
-    </div>
-
     <!-- Movie List -->
     <section class="mlist-container">
         <h2 class="section-title">
             Popular
         </h2>
-        <ul class="movie-list">
-            <li>
-                <article class="movie-card">
-                    <img src="../images/john-wick.png" alt="John Wick (2014)">
-                </article>
-            </li>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" aria-label="Scroll Left">
+                <i class="bi bi-chevron-left"></i>
+            </button>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/esaretin-bedeli.png" alt="The Shawsank Redemption (1994)">
-                </article>
-            </li>
+            <ul class="movie-list">
+                <li data-genre="thriller">
+                    <article class="movie-card">
+                        <img src="../images/john-wick.png" alt="John Wick (2014)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)">
-                </article>
-            </li>
+                <li data-genre="drama">
+                    <article class="movie-card">
+                        <img src="../images/esaretin-bedeli.png" alt="The Shawsank Redemption (1994)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/interstellar.png" alt="Interstellar (2014)">
-                </article>
-            </li>
+                <li data-genre="comedy">
+                    <article class="movie-card">
+                        <img src="../images/budapeşte-hoteli.png" alt="The Grand Budapest Hotel (2014)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/the-conjuring.png" alt="The Conjuring (2013)">
-                </article>
-            </li>
+                <li data-genre="sci-fiction">
+                    <article class="movie-card">
+                        <img src="../images/interstellar.png" alt="Interstellar (2014)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/se7en.png" alt="Se7en (1995)">
-                </article>
-            </li>
+                <li data-genre="horror">
+                    <article class="movie-card">
+                        <img src="../images/the-conjuring.png" alt="The Conjuring (2013)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/la-la-land.png" alt="La La Land (2016)">
-                </article>
-            </li>
+                <li data-genre="thriller">
+                    <article class="movie-card">
+                        <img src="../images/se7en.png" alt="Se7en (1995)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/yuzuklerin-efendisi.png" alt="The Lord of the Rings: The Fellowship of the Ring (2001)">
-                </article>
-            </li>
+                <li data-genre="romantic">
+                    <article class="movie-card">
+                        <img src="../images/la-la-land.png" alt="La La Land (2016)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/orumcek-adam-evreninde.png" alt="Spider-Man: Into the Spider-Verse (2018)">
-                </article>
-            </li>
+                <li data-genre="fantasy">
+                    <article class="movie-card">
+                        <img src="../images/yuzuklerin-efendisi.png" alt="The Lord of the Rings: The Fellowship of the Ring (2001)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/free-solo.png" alt="Free Solo (2018)">
-                </article>
-            </li>
+                <li data-genre="animation">
+                    <article class="movie-card">
+                        <img src="../images/orumcek-adam-evreninde.png" alt="Spider-Man: Into the Spider-Verse (2018)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/iyi-kotu-ve-cirkin.png" alt="The Good, the Bad and the Ugly (1966)">
-                </article>
-            </li>
+                <li data-genre="documentaries">
+                    <article class="movie-card">
+                        <img src="../images/free-solo.png" alt="Free Solo (2018)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/schindler-list.png" alt="Schindler's List (1993)">
-                </article>
-            </li>
+                <li data-genre="western">
+                    <article class="movie-card">
+                        <img src="../images/iyi-kotu-ve-cirkin.png" alt="The Good, the Bad and the Ugly (1966)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/knives-out.png" alt="Knives Out (2019)">
-                </article>
-            </li>
+                <li data-genre="history">
+                    <article class="movie-card">
+                        <img src="../images/schindler-list.png" alt="Schindler's List (1993)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/little-miss-sunshine.png" alt="Little Miss Sunshine (2006)">
-                </article>
-            </li>
-        </ul>
+                <li data-genre="whodunit">
+                    <article class="movie-card">
+                        <img src="../images/knives-out.png" alt="Knives Out (2019)">
+                    </article>
+                </li>
+
+                <li data-genre="indie">
+                    <article class="movie-card">
+                        <img src="../images/little-miss-sunshine.png" alt="Little Miss Sunshine (2006)">
+                    </article>
+                </li>
+            </ul>
+
+            <button class="carousel-btn next" aria-label="Scroll Right">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
     </section>
 
     <section class="mlist-container">
         <h2 class="section-title">
             New Releases
         </h2>
-        <ul class="movie-list">
-            <li>
-                <article class="movie-card">
-                    <img src="../images/toy-story.png" alt="Toy Story 5 (2026)">
-                </article>
-            </li>
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" aria-label="Scroll Left">
+                <i class="bi bi-chevron-left"></i>
+            </button>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/onslaught.png" alt="Onslaught (2026)">
-                </article>
-            </li>
+            <ul class="movie-list">
+                <li data-genre="animation">
+                    <article class="movie-card">
+                        <img src="../images/toy-story.png" alt="Toy Story 5 (2026)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/backrooms.jpg" alt="Backrooms (2026)">
-                </article>
-            </li>
+                <li data-genre="action">
+                    <article class="movie-card">
+                        <img src="../images/onslaught.png" alt="Onslaught (2026)">
+                    </article>
+                </li>
 
-            <li>
-                <article class="movie-card">
-                    <img src="../images/scary-movie.jpg" alt="Scary Movie 6 (2026)">
-                </article>
-            </li>
-        </ul>
+                <li data-genre="horror">
+                    <article class="movie-card">
+                        <img src="../images/backrooms.jpg" alt="Backrooms (2026)">
+                    </article>
+                </li>
+
+                <li data-genre="comedy">
+                    <article class="movie-card">
+                        <img src="../images/scary-movie.jpg" alt="Scary Movie 6 (2026)">
+                    </article>
+                </li>
+            </ul>
+
+            <button class="carousel-btn next" aria-label="Scroll Right">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
     </section>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-brand">
@@ -271,6 +270,14 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
+
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
         </nav>
 
             <div class="footer-social">
@@ -288,6 +295,7 @@
 
     <!-- JS Docs -->
     <script src="../javascript/theme.js"></script>
+    <script src="../javascript/carousel.js"></script>
 
 </body>
 </html>
