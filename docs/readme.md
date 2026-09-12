@@ -39,66 +39,67 @@ https://github.com/user-attachments/assets/4fb83674-e73a-4ea3-bdb4-3a44301fac74
 
 ## Proje Klasör Yapısı
 
+```
 movie-site-last/
 ├── assets/
-│ └── movie-site.mp4
+│   └── movie-site.mp4
 ├── css/
-│ ├── components.css
-│ ├── layout.css
-│ ├── login.css
-│ ├── responsive.css
-│ └── style.css
+│   ├── components.css
+│   ├── layout.css
+│   ├── login.css
+│   ├── responsive.css
+│   └── style.css
 ├── docs/
-│ └── readme.md
+│   └── readme.md
 ├── html/
-│ ├── account.html
-│ ├── change-password.html
-│ ├── edit-profile.html
-│ ├── index.html
-│ ├── login.html
-│ ├── movie-detail.html
-│ ├── movies.html
-│ └── my-list.html
+│   ├── account.html
+│   ├── change-password.html
+│   ├── edit-profile.html
+│   ├── index.html
+│   ├── login.html
+│   ├── movie-detail.html
+│   ├── movies.html
+│   └── my-list.html
 ├── images/
-│ ├── arog.jpg
-│ ├── backrooms.jpg
-│ ├── budapeşte-hoteli.png
-│ ├── cinema.png
-│ ├── daredevik.jpg
-│ ├── esaretin-bedeli.png
-│ ├── far-from-hpme.png
-│ ├── free-solo.png
-│ ├── gora.jpg
-│ ├── hulk.jpg
-│ ├── interstellar.png
-│ ├── ironman.jpg
-│ ├── iyi-kotu-ve-cirkin.png
-│ ├── john-wick.png
-│ ├── knives-out.png
-│ ├── la-la-land.png
-│ ├── little-miss-sunshine.png
-│ ├── mandalorian.png
-│ ├── mmorales.jpg
-│ ├── onslaught.png
-│ ├── orumcek-adam-evreninde.png
-│ ├── scary-movie.jpg
-│ ├── schindler-list.png
-│ ├── se7en.png
-│ ├── spidey2.jpg
-│ ├── the-conjuring.png
-│ ├── toy-story.png
-│ └── yuzuklerin-efendisi.png
+│   ├── arog.jpg
+│   ├── backrooms.jpg
+│   ├── budapeşte-hoteli.png
+│   ├── cinema.png
+│   ├── daredevik.jpg
+│   ├── esaretin-bedeli.png
+│   ├── far-from-hpme.png
+│   ├── free-solo.png
+│   ├── gora.jpg
+│   ├── hulk.jpg
+│   ├── interstellar.png
+│   ├── ironman.jpg
+│   ├── iyi-kotu-ve-cirkin.png
+│   ├── john-wick.png
+│   ├── knives-out.png
+│   ├── la-la-land.png
+│   ├── little-miss-sunshine.png
+│   ├── mandalorian.png
+│   ├── mmorales.jpg
+│   ├── onslaught.png
+│   ├── orumcek-adam-evreninde.png
+│   ├── scary-movie.jpg
+│   ├── schindler-list.png
+│   ├── se7en.png
+│   ├── spidey2.jpg
+│   ├── the-conjuring.png
+│   ├── toy-story.png
+│   └── yuzuklerin-efendisi.png
 └── javascript/
-├── auth.js
-├── carousel.js
-├── genre-filter.js
-├── movie-details.js
-├── movies-actions.js
-├── my-list.js
-├── responsive-menu.js
-├── search.js
-└── theme.js
-
+    ├── auth.js
+    ├── carousel.js
+    ├── genre-filter.js
+    ├── movie-details.js
+    ├── movies-actions.js
+    ├── my-list.js
+    ├── responsive-menu.js
+    ├── search.js
+    └── theme.js
+```
 
 ## Nasıl Çalışıyor
 
@@ -187,66 +188,67 @@ https://github.com/user-attachments/assets/4fb83674-e73a-4ea3-bdb4-3a44301fac74
 
 ## Project Structure
 
+```
 movie-site-last/
 ├── assets/
-│ └── movie-site.mp4
+│   └── movie-site.mp4
 ├── css/
-│ ├── components.css
-│ ├── layout.css
-│ ├── login.css
-│ ├── responsive.css
-│ └── style.css
+│   ├── components.css
+│   ├── layout.css
+│   ├── login.css
+│   ├── responsive.css
+│   └── style.css
 ├── docs/
-│ └── readme.md
+│   └── readme.md
 ├── html/
-│ ├── account.html
-│ ├── change-password.html
-│ ├── edit-profile.html
-│ ├── index.html
-│ ├── login.html
-│ ├── movie-detail.html
-│ ├── movies.html
-│ └── my-list.html
+│   ├── account.html
+│   ├── change-password.html
+│   ├── edit-profile.html
+│   ├── index.html
+│   ├── login.html
+│   ├── movie-detail.html
+│   ├── movies.html
+│   └── my-list.html
 ├── images/
-│ ├── arog.jpg
-│ ├── backrooms.jpg
-│ ├── budapeşte-hoteli.png
-│ ├── cinema.png
-│ ├── daredevik.jpg
-│ ├── esaretin-bedeli.png
-│ ├── far-from-hpme.png
-│ ├── free-solo.png
-│ ├── gora.jpg
-│ ├── hulk.jpg
-│ ├── interstellar.png
-│ ├── ironman.jpg
-│ ├── iyi-kotu-ve-cirkin.png
-│ ├── john-wick.png
-│ ├── knives-out.png
-│ ├── la-la-land.png
-│ ├── little-miss-sunshine.png
-│ ├── mandalorian.png
-│ ├── mmorales.jpg
-│ ├── onslaught.png
-│ ├── orumcek-adam-evreninde.png
-│ ├── scary-movie.jpg
-│ ├── schindler-list.png
-│ ├── se7en.png
-│ ├── spidey2.jpg
-│ ├── the-conjuring.png
-│ ├── toy-story.png
-│ └── yuzuklerin-efendisi.png
+│   ├── arog.jpg
+│   ├── backrooms.jpg
+│   ├── budapeşte-hoteli.png
+│   ├── cinema.png
+│   ├── daredevik.jpg
+│   ├── esaretin-bedeli.png
+│   ├── far-from-hpme.png
+│   ├── free-solo.png
+│   ├── gora.jpg
+│   ├── hulk.jpg
+│   ├── interstellar.png
+│   ├── ironman.jpg
+│   ├── iyi-kotu-ve-cirkin.png
+│   ├── john-wick.png
+│   ├── knives-out.png
+│   ├── la-la-land.png
+│   ├── little-miss-sunshine.png
+│   ├── mandalorian.png
+│   ├── mmorales.jpg
+│   ├── onslaught.png
+│   ├── orumcek-adam-evreninde.png
+│   ├── scary-movie.jpg
+│   ├── schindler-list.png
+│   ├── se7en.png
+│   ├── spidey2.jpg
+│   ├── the-conjuring.png
+│   ├── toy-story.png
+│   └── yuzuklerin-efendisi.png
 └── javascript/
-├── auth.js
-├── carousel.js
-├── genre-filter.js
-├── movie-details.js
-├── movies-actions.js
-├── my-list.js
-├── responsive-menu.js
-├── search.js
-└── theme.js
-
+    ├── auth.js
+    ├── carousel.js
+    ├── genre-filter.js
+    ├── movie-details.js
+    ├── movies-actions.js
+    ├── my-list.js
+    ├── responsive-menu.js
+    ├── search.js
+    └── theme.js
+```
 
 ## How It Works
 
