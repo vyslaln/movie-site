@@ -106,10 +106,11 @@
 
 /* Movie Card */
 .movie-card {
+    position: relative;
+    overflow: hidden;
     flex: 0 0 auto;
     width: 190px;
     border-radius: 10px;
-    overflow: hidden;
     background-color: var(--bg-card);
     box-shadow: 0 4px 14px var(--shadow-color);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -124,6 +125,25 @@
     width: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
+    display: block;
+}
+
+.movie-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
 }
 
 /* Movie Grid (Movies Page) */
@@ -261,4 +281,108 @@
 .footer-bottom p {
     font-size: 13px;
     color: var(--text-muted);
+}
+
+/* Arama Pop-up Stilleri */
+.search-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 100px;
+    backdrop-filter: blur(4px);
+}
+
+.search-modal-content {
+    background-color: var(--bg-card, #1e1e1e);
+    width: 90%;
+    max-width: 550px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: var(--text-color, #fff);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-modal-header h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.btn-close-modal {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: inherit;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.03);
+    color: #141414 !important;
+    font-size: 15px;
+    outline: none;
+}
+
+.search-input-wrapper input::placeholder {
+    color: #737373;
+}
+
+.search-input-wrapper input:focus {
+    border-color: #dc3545;
+}
+
+.search-results-container {
+    margin-top: 15px;
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.2s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(220, 53, 69, 0.15);
+}
+
+.search-result-item img {
+    width: 35px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.search-result-item span {
+    font-size: 14px;
+    font-weight: 500;
 }
